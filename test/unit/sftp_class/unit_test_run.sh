@@ -6,6 +6,7 @@
 
 echo ""
 echo "Unit test:  git_class.py"
+test/unit/sftp_class/sftp_chg_dir.py
 test/unit/sftp_class/sftp_close_conn.py
 test/unit/sftp_class/sftp_init.py
 test/unit/sftp_class/sftp_open_conn.py

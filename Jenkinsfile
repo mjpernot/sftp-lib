@@ -16,6 +16,7 @@ pipeline {
                 source test_env/bin/activate
                 pip2 install mock==2.0.0 --user
                 pip2 install paramiko==1.8.0 --user
+                ./test/unit/sftp_class/sftp_chg_dir.py
                 ./test/unit/sftp_class/sftp_close_conn.py
                 ./test/unit/sftp_class/sftp_init.py
                 ./test/unit/sftp_class/sftp_open_conn.py

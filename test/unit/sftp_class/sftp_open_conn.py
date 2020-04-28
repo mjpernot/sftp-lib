@@ -43,6 +43,7 @@ class UnitTest(unittest.TestCase):
 
     Methods:
         setUp -> Unit testing initilization.
+        test_open_conn_good -> Test with good connection.
         test_open_conn_error -> Test with unknown error.
         tearDown -> Clean up of unit testing.
 
@@ -95,7 +96,7 @@ class UnitTest(unittest.TestCase):
 
         """Function:  test_open_conn_good
 
-        Description:  Test with unknown error.
+        Description:  Test with good connection.
 
         Arguments:
 

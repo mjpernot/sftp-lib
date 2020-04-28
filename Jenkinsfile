@@ -18,8 +18,10 @@ pipeline {
                 pip2 install paramiko==1.8.0 --user
                 ./test/unit/sftp_class/sftp_chg_dir.py
                 ./test/unit/sftp_class/sftp_close_conn.py
+                ./test/unit/sftp_class/sftp_get_pwd.py
                 ./test/unit/sftp_class/sftp_init.py
                 ./test/unit/sftp_class/sftp_open_conn.py
+                ./test/unit/sftp_class/sftp_put_file.py
                 deactivate
                 rm -rf test_env
                 """

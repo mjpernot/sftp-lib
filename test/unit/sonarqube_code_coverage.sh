@@ -10,8 +10,10 @@ echo ""
 echo "Running unit test modules in conjunction with coverage"
 coverage run -a --source=sftp_class test/unit/sftp_class/sftp_chg_dir.py
 coverage run -a --source=sftp_class test/unit/sftp_class/sftp_close_conn.py
+coverage run -a --source=sftp_class test/unit/sftp_class/sftp_get_pwd.py
 coverage run -a --source=sftp_class test/unit/sftp_class/sftp_init.py
 coverage run -a --source=sftp_class test/unit/sftp_class/sftp_open_conn.py
+coverage run -a --source=sftp_class test/unit/sftp_class/sftp_put_file.py
 
 echo ""
 echo "Producing code coverage report"

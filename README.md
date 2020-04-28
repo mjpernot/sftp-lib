@@ -16,8 +16,6 @@
 # Prerequisites:
 
   * List of Linux packages that need to be installed on the server.
-    - python-libs
-    - python-devel
     - git
     - python-pip
 
@@ -87,7 +85,7 @@ exit
 
 # Unit Testing:
 
-### Description: Testing consists of unit testing for the functions in the sftp_class.py program.
+### Description: Testing consists of unit testing for the functions in the program.
 
 ### Installation:
 
@@ -116,25 +114,17 @@ pip install -r requirements.txt --upgrade --trusted-host pypi.appdev.proj.coe.ic
 exit
 ```
 
-# Unit test runs for sftp_class.py:
+### Unit testing:
   * Replace **{Python_Project}** with the baseline path of the python program.
 
 ```
 cd {Python_Project}/sftp-lib
-```
-
-### Unit:  
-```
-test/unit/sftp_class/
-```
-
-### All unit testing
-```
 test/unit/sftp_class/unit_test_run.sh
 ```
 
-### Code coverage program
+### Code Coverage:
 ```
+cd {Python_Project}/sftp-lib
 test/unit/sftp_class/code_coverage.sh
 ```
 

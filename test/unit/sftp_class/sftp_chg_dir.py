@@ -35,6 +35,42 @@ import version
 __version__ = version.__version__
 
 
+class OpenSFTP(object):
+
+    """Class:  OpenSFTP
+
+    Description:  Class stub holder for paramiko.SSHClient class.
+
+    Methods:
+        __init__ -> Class initialization.
+
+    """
+
+    def __init__(self):
+
+        """Method:  __init__
+
+        Description:  Class initialization.
+
+        Arguments:
+
+        """
+
+        pass
+
+    def chdir(self):
+
+        """Method:  chdir
+
+        Description:  chdir method.
+
+        Arguments:
+
+        """
+
+        pass 
+
+
 class SSHClient(object):
 
     """Class:  SSHClient
@@ -68,7 +104,7 @@ class SSHClient(object):
 
         """
 
-        pass
+        return OpenSFTP()
 
 
 class UnitTest(unittest.TestCase):

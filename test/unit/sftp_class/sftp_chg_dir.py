@@ -35,6 +35,42 @@ import version
 __version__ = version.__version__
 
 
+class SSHClient(object):
+
+    """Class:  SSHClient
+
+    Description:  Class stub holder for paramiko.SSHClient class.
+
+    Methods:
+        __init__ -> Class initialization.
+
+    """
+
+    def __init__(self):
+
+        """Method:  __init__
+
+        Description:  Class initialization.
+
+        Arguments:
+
+        """
+
+        self.chg_dir = None
+
+    def chdir(self, chg_dir):
+
+        """Method:  chdir
+
+        Description:  Class initialization.
+
+        Arguments:
+
+        """
+
+        self.chg_dir = chg_dir
+
+
 class UnitTest(unittest.TestCase):
 
     """Class:  UnitTest
@@ -86,12 +122,13 @@ class UnitTest(unittest.TestCase):
                 self.log_file = "./test/unit/sftp_class/tmp/paramiko.log"
 
         self.cfg = CfgTest()
+        self.mine = SSHClient()
         self.cfg_file = "Config_File"
         self.cfg_dir = "Config_Dir"
         self.chg_dir = "/dir/path"
 
     @unittest.skip("Error:  Unable to locate chdir")
-    @mock.patch("sftp_class.paramiko.SSHClient")
+    @mock.patch("paramiko.SSHClient.open_sftp.chdir")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_chg_dir_good(self, mock_cfg, mock_sftp):
 
@@ -104,7 +141,7 @@ class UnitTest(unittest.TestCase):
         """
 
         mock_cfg.return_value = self.cfg
-        mock_sftp.chdir.return_value = True
+        mock_sftp.return_value = True
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
 

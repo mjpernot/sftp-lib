@@ -58,7 +58,7 @@ class SSHClient(object):
 
         self.chg_dir = None
 
-    def chdir(self, chg_dir):
+    def open_sftp(self):
 
         """Method:  chdir
 
@@ -68,7 +68,7 @@ class SSHClient(object):
 
         """
 
-        self.chg_dir = chg_dir
+        pass
 
 
 class UnitTest(unittest.TestCase):
@@ -127,7 +127,7 @@ class UnitTest(unittest.TestCase):
         self.cfg_dir = "Config_Dir"
         self.chg_dir = "/dir/path"
 
-    @unittest.skip("Error:  Unable to locate chdir")
+    #@unittest.skip("Error:  Unable to locate chdir")
     @mock.patch("paramiko.SSHClient.open_sftp.chdir")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_chg_dir_good(self, mock_cfg, mock_sftp):
@@ -144,6 +144,7 @@ class UnitTest(unittest.TestCase):
         mock_sftp.return_value = True
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
+        sftp.sftp = self.mine
 
         self.assertTrue(sftp.chg_dir(self.chg_dir))
 

@@ -90,9 +90,10 @@ class UnitTest(unittest.TestCase):
         self.cfg_file = "Config_File"
         self.cfg_dir = "Config_Dir"
 
-    @mock.patch("sftp_class.paramiko.SSHClient")
+    @mock.patch("sftp_class.paramiko.SSHClient.open_sftp")
+    @mock.patch("sftp_class.paramiko.SSHClient.connect")
     @mock.patch("sftp_class.gen_libs.load_module")
-    def test_open_conn_good(self, mock_cfg, mock_sftp):
+    def test_open_conn_good(self, mock_cfg, mock_conn, mock_open):
 
         """Function:  test_open_conn_good
 
@@ -103,7 +104,8 @@ class UnitTest(unittest.TestCase):
         """
 
         mock_cfg.return_value = self.cfg
-        mock_sftp.connect.return_value = True
+        mock_conn.return_value = True
+        mock_open.return_value = True
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
 

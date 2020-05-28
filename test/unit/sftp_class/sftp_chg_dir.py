@@ -35,42 +35,6 @@ import version
 __version__ = version.__version__
 
 
-class OpenSFTP(object):
-
-    """Class:  OpenSFTP
-
-    Description:  Class stub holder for paramiko.SSHClient class.
-
-    Methods:
-        __init__ -> Class initialization.
-
-    """
-
-    def __init__(self):
-
-        """Method:  __init__
-
-        Description:  Class initialization.
-
-        Arguments:
-
-        """
-
-        pass
-
-    def chdir(self):
-
-        """Method:  chdir
-
-        Description:  chdir method.
-
-        Arguments:
-
-        """
-
-        pass 
-
-
 class SSHClient(object):
 
     """Class:  SSHClient
@@ -96,7 +60,7 @@ class SSHClient(object):
 
     def open_sftp(self):
 
-        """Method:  chdir
+        """Method:  open_sftp
 
         Description:  Class initialization.
 
@@ -104,7 +68,19 @@ class SSHClient(object):
 
         """
 
-        return OpenSFTP()
+        return self.chdir
+
+    def chdir(self, chg_dir):
+
+        """Method:  chdir
+
+        Description:  chdir method.
+
+        Arguments:
+
+        """
+
+        self.chg_dir = chg_dir 
 
 
 class UnitTest(unittest.TestCase):
@@ -163,8 +139,7 @@ class UnitTest(unittest.TestCase):
         self.cfg_dir = "Config_Dir"
         self.chg_dir = "/dir/path"
 
-    #@unittest.skip("Error:  Unable to locate chdir")
-    @mock.patch("paramiko.SSHClient.open_sftp.chdir")
+    @mock.patch("paramiko.SSHClient.open_sftp")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_chg_dir_good(self, mock_cfg, mock_sftp):
 
@@ -181,6 +156,7 @@ class UnitTest(unittest.TestCase):
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
         sftp.sftp = self.mine
+        sftp.is_connected = True
 
         self.assertTrue(sftp.chg_dir(self.chg_dir))
 

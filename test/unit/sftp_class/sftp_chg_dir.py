@@ -43,6 +43,9 @@ class SSHClient(object):
 
     Methods:
         __init__ -> Class initialization.
+        open_sftp -> open_sftp method.
+        chdir -> chdir method.
+        
 
     """
 
@@ -62,7 +65,7 @@ class SSHClient(object):
 
         """Method:  open_sftp
 
-        Description:  Class initialization.
+        Description:  open_sftp method.
 
         Arguments:
 

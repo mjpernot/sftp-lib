@@ -134,7 +134,7 @@ class UnitTest(unittest.TestCase):
                 self.log_file = "./test/unit/sftp_class/tmp/paramiko.log"
 
         self.cfg = CfgTest()
-        self.mine = SSHClient()
+        self.sshclient = SSHClient()
         self.cfg_file = "Config_File"
         self.cfg_dir = "Config_Dir"
         self.chg_dir = "/dir/path"
@@ -155,7 +155,7 @@ class UnitTest(unittest.TestCase):
         mock_sftp.return_value = True
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
-        sftp.sftp = self.mine
+        sftp.sftp = self.sshclient
         sftp.is_connected = True
 
         self.assertTrue(sftp.chg_dir(self.chg_dir))

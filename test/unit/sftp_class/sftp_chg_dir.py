@@ -139,7 +139,7 @@ class UnitTest(unittest.TestCase):
         self.cfg_dir = "Config_Dir"
         self.chg_dir = "/dir/path"
 
-    @mock.patch("paramiko.SSHClient.open_sftp")
+    @mock.patch("sftp_class.paramiko.SSHClient.open_sftp")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_chg_dir_good(self, mock_cfg, mock_sftp):
 

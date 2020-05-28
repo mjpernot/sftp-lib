@@ -35,6 +35,59 @@ import version
 __version__ = version.__version__
 
 
+class SSHClient(object):
+
+    """Class:  SSHClient
+
+    Description:  Class stub holder for paramiko.SSHClient class.
+
+    Methods:
+        __init__ -> Class initialization.
+        open_sftp -> open_sftp method.
+        put -> put method.
+        
+
+    """
+
+    def __init__(self):
+
+        """Method:  __init__
+
+        Description:  Class initialization.
+
+        Arguments:
+
+        """
+
+        self.source_file = None
+        self.destination_file = None
+
+    def open_sftp(self):
+
+        """Method:  open_sftp
+
+        Description:  open_sftp method.
+
+        Arguments:
+
+        """
+
+        return self.source_file
+
+    def put(self, source_file, destination_file):
+
+        """Method:  put
+
+        Description:  put method.
+
+        Arguments:
+
+        """
+
+        self.source_file = source_file
+        self.destination_file = destination_file 
+
+
 class UnitTest(unittest.TestCase):
 
     """Class:  UnitTest
@@ -86,11 +139,11 @@ class UnitTest(unittest.TestCase):
                 self.log_file = "./test/unit/sftp_class/tmp/paramiko.log"
 
         self.cfg = CfgTest()
+        self.sshclient = SSHClient()
         self.cfg_file = "Config_File"
         self.cfg_dir = "Config_Dir"
 
-    @unittest.skip("Error:  Unable to locate getcwd")
-    @mock.patch("sftp_class.paramiko.SSHClient")
+    @mock.patch("sftp_class.paramiko.SSHClient.open_sftp")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_put_file_good(self, mock_cfg, mock_sftp):
 
@@ -106,6 +159,8 @@ class UnitTest(unittest.TestCase):
         mock_sftp.put.return_value = True
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
+        sftp.sftp = self.sshclient
+        sftp.is_connected = True
 
         sftp.put_file("source", "destination")
 

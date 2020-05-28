@@ -8,7 +8,6 @@
 ###  This README file is broken down into the following sections:
  * Prerequisites
  * Installation
- * Program Description
  * Testing
    - Unit
 
@@ -75,17 +74,9 @@ exit
 ```
 
 
-# Program Descriptions:
-### Program: sftp_class.py
-##### Description: Class definitions and methods for ssh and sftp connections.
-  * SFTP => Class which is a representation of a SFTP connection.
-
-
 # Testing:
 
 # Unit Testing:
-
-### Description: Testing consists of unit testing for the functions in the program.
 
 ### Installation:
 

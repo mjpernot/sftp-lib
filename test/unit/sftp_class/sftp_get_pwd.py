@@ -140,7 +140,6 @@ class UnitTest(unittest.TestCase):
         self.cfg_file = "Config_File"
         self.cfg_dir = "Config_Dir"
 
-    #@unittest.skip("Error:  Unable to locate getcwd")
     @mock.patch("sftp_class.paramiko.SSHClient.open_sftp")
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_get_pwd_good(self, mock_cfg, mock_sftp):

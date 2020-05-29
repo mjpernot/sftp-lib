@@ -45,7 +45,6 @@ class SSHClient(object):
         __init__ -> Class initialization.
         open_sftp -> open_sftp method.
         chdir -> chdir method.
-        
 
     """
 
@@ -83,7 +82,7 @@ class SSHClient(object):
 
         """
 
-        self.chg_dir = chg_dir 
+        self.chg_dir = chg_dir
 
 
 class UnitTest(unittest.TestCase):
@@ -163,9 +162,9 @@ class UnitTest(unittest.TestCase):
 
         self.assertTrue(sftp.chg_dir(self.chg_dir))
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected),
-                         (self.cfg.username, self.cfg.log_file, True))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected),
+            (self.cfg.username, self.cfg.log_file, True))
 
     def tearDown(self):
 

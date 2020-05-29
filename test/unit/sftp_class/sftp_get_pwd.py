@@ -82,7 +82,7 @@ class SSHClient(object):
 
         """
 
-        return True 
+        return True
 
 
 class UnitTest(unittest.TestCase):
@@ -161,9 +161,9 @@ class UnitTest(unittest.TestCase):
 
         self.assertTrue(sftp.get_pwd())
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected),
-                         (self.cfg.username, self.cfg.log_file, True))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected),
+            (self.cfg.username, self.cfg.log_file, True))
 
     def tearDown(self):
 

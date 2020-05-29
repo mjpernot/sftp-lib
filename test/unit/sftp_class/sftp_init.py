@@ -104,9 +104,9 @@ class UnitTest(unittest.TestCase):
 
         sftp = sftp_class.SFTP(self.cfg_file, self.cfg_dir)
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected, sftp.sftp),
-                         (self.cfg.username, self.cfg.log_file, False, None))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected, sftp.sftp),
+            (self.cfg.username, self.cfg.log_file, False, None))
 
     def tearDown(self):
 

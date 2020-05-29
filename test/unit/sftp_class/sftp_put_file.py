@@ -45,7 +45,6 @@ class SSHClient(object):
         __init__ -> Class initialization.
         open_sftp -> open_sftp method.
         put -> put method.
-        
 
     """
 
@@ -85,7 +84,7 @@ class SSHClient(object):
         """
 
         self.source_file = source_file
-        self.destination_file = destination_file 
+        self.destination_file = destination_file
 
 
 class UnitTest(unittest.TestCase):
@@ -164,9 +163,9 @@ class UnitTest(unittest.TestCase):
 
         sftp.put_file("source", "destination")
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected),
-                         (self.cfg.username, self.cfg.log_file, True))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected),
+            (self.cfg.username, self.cfg.log_file, True))
 
     def tearDown(self):
 

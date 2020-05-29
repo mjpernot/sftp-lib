@@ -111,9 +111,9 @@ class UnitTest(unittest.TestCase):
 
         sftp.open_conn()
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected),
-                         (self.cfg.username, self.cfg.log_file, True))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected),
+            (self.cfg.username, self.cfg.log_file, True))
 
     @mock.patch("sftp_class.gen_libs.load_module")
     def test_open_conn_error(self, mock_cfg):
@@ -133,9 +133,9 @@ class UnitTest(unittest.TestCase):
         with gen_libs.no_std_out():
             sftp.open_conn()
 
-        self.assertEqual((
-            sftp.username, sftp.log_file, sftp.is_connected, sftp.sftp),
-                         (self.cfg.username, self.cfg.log_file, False, None))
+        self.assertEqual(
+            (sftp.username, sftp.log_file, sftp.is_connected, sftp.sftp),
+            (self.cfg.username, self.cfg.log_file, False, None))
 
     def tearDown(self):
 

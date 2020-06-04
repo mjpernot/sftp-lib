@@ -2,7 +2,7 @@
 # Classification (U)
 
 # Description:
-  This project consists of a number of Python files that are common function libraries and classes to setup and use ssh and sftp connections.  These programs are not standalone programs, but are available for python programs to utilize.
+  Consists of a number of Python files that are common function libraries and classes to setup and use ssh and sftp connections.  These programs are not standalone programs, but are available for python programs to utilize.
 
 
 ###  This README file is broken down into the following sections:
@@ -62,7 +62,7 @@ Add the following lines under the "Install supporting classes and libraries" sec
    pip install -r requirements-python-lib.txt --target sftp_lib/lib --trusted-host pypi.appdev.proj.coe.ic.gov
 ```
 
-##### Add the general Sftp-Lib requirements to the other program's requirements.txt file.  Remove any duplicates.
+##### Add the general sftp-Lib requirements to the other program's requirements.txt file.  Remove any duplicates.
 
 Modify the requirements.txt file:
 ```

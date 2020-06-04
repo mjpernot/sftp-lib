@@ -23,7 +23,6 @@ with warnings.catch_warnings():
 import lib.gen_libs as gen_libs
 import version
 
-# Version
 __version__ = version.__version__
 
 
@@ -34,10 +33,6 @@ class SFTP(object):
     Description:  Class which is a representation of a SFTP connection.  A
         SFTP object is used as proxy to open up a SSH/SFTP connection to a
         server.
-
-    Super-Class:  object
-
-    Sub-Classes:
 
     Methods:
         __init__ -> Class instance initilization.
@@ -57,8 +52,6 @@ class SFTP(object):
         Arguments:
             (input)  cfg_file -> Configuration file for the sftp connection.
             (input)  cfg_dir -> Directory path containing configuration file.
-            (input)  **kwargs:
-                None
 
         """
 
@@ -88,8 +81,6 @@ class SFTP(object):
         Description:  Open a sftp connection to a server via a ssh connection.
 
         Arguments:
-            (input)  **kwargs:
-                None
 
         """
 
@@ -117,8 +108,6 @@ class SFTP(object):
         Description:  Close a sftp connection to a server.
 
         Arguments:
-            (input)  **kwargs:
-                None
 
         """
 
@@ -133,8 +122,6 @@ class SFTP(object):
 
         Arguments:
             (input)  chg_dir -> Directory to change to (relative or absolute).
-            (input)  **kwargs:
-                None
             (output) status -> True|False - Change directory succeeded.
 
         """
@@ -156,8 +143,6 @@ class SFTP(object):
         Description:  Return the current path directory in the sftp connection.
 
         Arguments:
-            (input)  **kwargs:
-                None
             (output) Current path directory.
 
         """
@@ -173,8 +158,6 @@ class SFTP(object):
         Arguments:
             (input) source_file -> Source file name and directory path to put.
             (input) destination_file -> Destination file name & directory path"
-            (input)  **kwargs:
-                None
 
         """
 
